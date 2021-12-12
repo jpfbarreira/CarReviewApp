@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Reviews</title>
+    <link rel = "icon" href = "https://icon-library.com/images/white-car-icon-png/white-car-icon-png-22.jpg" type = "image/x-icon">
+    <link rel="stylesheet" href="app.css">
+    
+</head>
+<body style = "background-color: rgb(0, 0, 0);">
+    <ul>  
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn" for="checkbox_toggle" class="hamburger" style="color: white; font-weight: bold;">&#9776;</a>
+            <div class="dropdown-content">
+            <a href="reviews.html">All Car Reviews</a>
+            <a href="reviews/topgear.html">TopGear Reviews</a>
+            <a href="reviews/autocar.html">AutoCar Reviews</a>
+            <a href="reviews/autoexpress.html">AutoExpress Reviews</a>
+            </div>
+        </li>
+
+<!-- modal -->
+        <button
+      type="button"
+      class="buttonLogin"
+      id="btnModalLogin"
+    >
+      Login
+    </button>
+
+    <button
+      type="button"
+      class="buttonRegistar"
+      id="btnModalRegistar"
+    >
+      Sign Up
+    </button>
+
+    <button
+    type="button"
+    class="buttonLogOff"
+    id="btnLogoff"
+  >
+    Log Out
+  </button>
+
+    <!-- Modal para registar novo utilizador -->
+    <!-- se retirar o data-bs-backdrop, o modal desaparece ao clicar no fundo da página -->
+    <div
+      class="modal fade"
+      id="modalRegistar"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-bs-backdrop="static"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Register New User
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" style="color: white;">E-Mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="usernameRegistar"
+                name="usernameRegistar"
+                placeholder="E-Mail"
+              />
+              <p id="emailErroLoginRegistar"></p>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" style="color: white;">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senhaRegistar"
+                name="senhaRegistar"
+                placeholder="Senha"
+              />
+              <p id="statusRegistar" style="color: white;"></p>
+            </div>
+            <div class="modal-footer d-block">
+              <button id="btnCancelaRegistar" class="buttonCancelar" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button
+                class="buttonSubmeter"
+                id="btnSubmitRegistar"
+                onclick="validaRegisto()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para fazer login -->
+    <!-- se retirar o data-bs-backdrop, o modal desaparece ao clicar no fundo da página -->
+    <div
+      class="modal fade"
+      id="modalLogin"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-bs-backdrop="static"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Insert Your Credentials
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              id="btnLoginClose"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" style="color: white;">E-Mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="usernameLogin"
+                name="usernameLogin"
+                placeholder="E-Mail"
+              />
+              <p id="emailErroLogin"></p>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" style="color: white;">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senhaLogin"
+                name="senhaLogin"
+                placeholder="Senha"
+              />
+              <p id="passErroLogin" style="color: white;"></p>
+              <p id="statusLogin"></p>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe" style="color: white;"
+                >Remember-me</label
+              >
+            </div>
+            <div class="modal-footer d-block">
+              <p id='pRegistar' class="float-start">
+                <a href="#">Register</a>
+              </p>
+              <button class="buttonCancelar" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button
+                class="buttonSubmeter"
+                id="btnSubmitLogin"
+                onclick="validaLogin()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- modal -->
+
+
+
+        <a class = "carTitle"> Car Reviews</a>
+    </ul>
+    <header class = "head"> 
+        <div class = "container">
+            <div class="intro-text">
+                <div class ="intro-heading text-uppercase">CAR REVIEWS</div>
+                <p><div class = "intro-lead-in">Welcome Here You Can Find The Best Cars Reviews</div></p>
+            </div>
+        </div>
+    </header>
+    <div class = "all-reviews" style="text-decoration-line: underline;">
+        <span><a href="reviews.html">  All Car Reviews Just For You  </a></span><br />
+    </div>
+    
+    <div class="column1"><a href="reviews/topgear.html"> <img src="https://images.squarespace-cdn.com/content/v1/5484f0c2e4b0982d89a02d1f/1518728406686-VW7PK0BLEXLR38IRS8GR/Top_Gear.jpg?format=1500w" style="width:433px;height:227px;"> </a><br /></div>
+    <div class="column2"><a href="reviews/autocar.html"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Autocar_Company_logo.svg/1280px-Autocar_Company_logo.svg.png" style="width:433px;height:227px;"> </a><br /></div>
+    <div class="column3"><a href="reviews/autoexpress.html"> <img src="http://www.autoexpresstr.com/images/auto-express-tr-20191016182339-3472.jpg" style="width:433px;height:227px;"> </a><br /></div>
+    <div class="wrapper">
+      <div class="content">
+          <p>easter egg :p</p> 
+      </div>
+      <div id="footer">
+        <div class="content">
+          <img src="https://icon-library.com/images/white-car-icon-png/white-car-icon-png-22.jpg" >
+          <span>&copy; Web_Dev | Design and Development. All Rights Reserved.<br/></span>
+          <span class = "resume">This is a project about Car Reviews for my Web Developer class. Have fun!</span>
+      </div>
+      </div>
+    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+    <script class="u-script" type="module" src="./js/onload.js" defer=""></script>
+    <script src="js/users.js"></script>
+</body>
+</html>
